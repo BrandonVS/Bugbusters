@@ -7,6 +7,8 @@ public class Bug : MonoBehaviour
 	public float speed = 10f;
 	private Transform target;
 	private int wavepointIndex = 0;
+	public int health = 100;
+	public int value = 20;
 
 	void Start()
 	{
@@ -28,7 +30,7 @@ public class Bug : MonoBehaviour
     {
 		if (wavepointIndex >= Waypoints.points.Length - 1)
         {
-			Destroy(gameObject);
+			EndPath();
 			return;
         }
 
@@ -36,4 +38,24 @@ public class Bug : MonoBehaviour
 		target = Waypoints.points[wavepointIndex];
     }
 
+	void EndPath()
+    {
+		--PlayerStats.Lives;
+		Destroy(gameObject);
+    }
+
+	public void TakeDamage(int amount)
+    {
+		health -= amount;
+		if(health <= 0)
+        {
+			Die();
+        }
+    }
+
+	void Die()
+    {
+		PlayerStats.dinero += value;
+		Destroy(gameObject);
+    }
 }

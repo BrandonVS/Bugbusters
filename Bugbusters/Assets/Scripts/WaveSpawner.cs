@@ -1,45 +1,72 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform bugPrefab;
+    public Transform bugPrefab1;
+    public Transform bugPrefab2;
+    public Transform bugPrefab3;
     public Transform inicio;
-    public Text oleadaN;
+    
 
     public float intermedio = 3f;
     private float countdown = 3f;
-    private int oleada = 1;
+    public static int oleada = 1;
 
     private Transform bug;
+    private Transform bugPrefab;
 
+    float tempIntervalo;
+    void Start() 
+    {
+        tempIntervalo = Random.Range(0.2f, 0.9f);
+    }
     void Update()
     {
+
         if (countdown <= 0f)
         {
             float intervaloBugs = Random.Range(0.2f, 0.7f);
-            int numeroBugs = Random.Range(2, 4);
+            int numeroBugs = Random.Range(2, 6);
             StartCoroutine(ApareceBug(numeroBugs, intervaloBugs));
-            countdown = intermedio;
+
+            countdown = Random.Range(2f, 5f);
         }
 
         countdown -= Time.deltaTime;
-
-
-        oleadaN.text = "Oleada: " + oleada.ToString();
     }
+
 
     IEnumerator ApareceBug(int numeroBugs, float intervaloBugs)
     {
-
+        if(oleada >= 20)
+        {
+            yield break;
+        }
+        int tipoBug = Random.Range(1, 4);
+        
+        switch (tipoBug)
+        {
+            case 1:
+                bugPrefab = bugPrefab1;
+                break;
+            case 2:
+                bugPrefab = bugPrefab2;
+                break;
+            case 3:
+                bugPrefab = bugPrefab3;
+                break;
+            default:
+                break;
+        }
+        oleada++;
+        float interval = Random.Range(0.2f, 0.8f);
         for (int i = 0; i < numeroBugs; i++)
         {
             bug = Instantiate(bugPrefab, inicio.position, inicio.rotation);
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(interval);
         }
-        oleada++;
     }
 }
