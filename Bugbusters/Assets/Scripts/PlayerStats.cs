@@ -22,9 +22,9 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        oleadaN.text = "Oleada: " + WaveSpawner.oleada.ToString();
+        oleadaN.text = "Bugs: " + WaveSpawner.oleada.ToString();
         dineroRest.text = dinero.ToString() + "$";
-        vidasRest.text = "Vidas restantes: " + Lives.ToString();
+        vidasRest.text = "Life left: " + Lives.ToString();
 
     }
 }
