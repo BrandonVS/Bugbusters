@@ -6,10 +6,12 @@ public class Turret : MonoBehaviour
 {
 
     private Transform target;
+    private AudioSource shootingSound;
 
     [Header("General")]
 
     public float range = 15f;
+    public AudioClip amnoSound;
 
     [Header("Use bullets")]
     public GameObject bulletPrefab;
@@ -32,7 +34,8 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);   
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        shootingSound = GetComponent<AudioSource>();
     }
 
     void UpdateTarget ()
@@ -83,6 +86,7 @@ public class Turret : MonoBehaviour
         if (useLaser)
         {
             Laser();
+            shootingSound.PlayOneShot(amnoSound, 0.05f);
         }
         else
         {
@@ -90,6 +94,7 @@ public class Turret : MonoBehaviour
             {
                 Shoot();
                 fireCountdown = 1f / fireRate;
+                shootingSound.PlayOneShot(amnoSound, 0.2f);
             }
 
             fireCountdown -= Time.deltaTime;
