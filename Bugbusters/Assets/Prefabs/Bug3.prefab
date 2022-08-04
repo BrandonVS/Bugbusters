@@ -111,3 +111,4 @@ MonoBehaviour:
   speed: 7
   health: 200
   value: 30
+  points: 100

@@ -11,9 +11,14 @@ public class PlayerStats : MonoBehaviour
     public static int Lives;
     public int startLives = 20;
 
+    public static int puntaje;
+    public int puntajeInicial = 0;
+
     public Text oleadaN;
     public Text dineroRest;
     public Text vidasRest;
+    public Text puntajeFin;
+    public Text puntajeWin;
     void Start()
     {
         dinero = dineroInicial;
@@ -25,6 +30,6 @@ public class PlayerStats : MonoBehaviour
         oleadaN.text = "Bugs: " + WaveSpawner.oleada.ToString();
         dineroRest.text = dinero.ToString() + "$";
         vidasRest.text = "Life left: " + Lives.ToString();
-
+        puntajeFin.text = puntajeWin.text = puntaje.ToString();
     }
 }

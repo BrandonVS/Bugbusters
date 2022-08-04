@@ -9,6 +9,7 @@ public class Bug : MonoBehaviour
 	private int wavepointIndex = 0;
 	public int health = 100;
 	public int value = 20;
+	public int points = 50;
 
 	void Start()
 	{
@@ -55,6 +56,7 @@ public class Bug : MonoBehaviour
 
 	void Die()
     {
+		PlayerStats.puntaje += points;
 		PlayerStats.dinero += value;
 		Destroy(gameObject);
     }
