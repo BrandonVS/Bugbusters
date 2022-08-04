@@ -190,6 +190,7 @@ MonoBehaviour:
   health: 200
   value: 20
   points: 50
+  partToRotate: {fileID: 4444695180855720}
 --- !u!1 &1130806907750044
 GameObject:
   m_ObjectHideFlags: 0

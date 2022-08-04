@@ -420,6 +420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7257017164553831845, guid: e42dce10de392fb46b7cf553d7658cf4, type: 3}
+      propertyPath: partToRotate
+      value: 
+      objectReference: {fileID: 2007242504}
     - target: {fileID: 5128811620208064792, guid: e42dce10de392fb46b7cf553d7658cf4, type: 3}
       propertyPath: m_Name
       value: spider_black
@@ -4462,7 +4466,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.73867923, g: 0.8207547, b: 0.8084041, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12908,6 +12912,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989682165}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2007242504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5505336437074420642, guid: e42dce10de392fb46b7cf553d7658cf4, type: 3}
+  m_PrefabInstance: {fileID: 86987933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010570065
 GameObject:
   m_ObjectHideFlags: 0

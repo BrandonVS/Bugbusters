@@ -1878,6 +1878,8 @@ MonoBehaviour:
   speed: 12
   health: 100
   value: 10
+  points: 50
+  partToRotate: {fileID: 9167602793266119324}
 --- !u!1 &8457898387381865832
 GameObject:
   m_ObjectHideFlags: 0
