@@ -8,15 +8,15 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(2);
         WaveSpawner.oleada = 1;
     }
 
 
     public void Menu()
     {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
         Debug.Log("Menu");
     }
-
 
 }
